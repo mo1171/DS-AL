@@ -1,5 +1,11 @@
 package heap;
 
-public interface IHeap {
+public interface IHeap<T extends Comparable<T>> {
+
+	IHeap<T> insert(T data);
+
+	T getRoot();
+
+	void sort();
 
 }
