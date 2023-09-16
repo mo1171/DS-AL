@@ -15,7 +15,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 @SuppressWarnings("serial")
- class VisualRedBlackTree<T extends Comparable<T>> extends JPanel implements Tree<T> {
+ class VisualRedBlackTree<T extends Comparable<T>> extends JPanel implements TreeRB<T> {
 
 	private RBNode<T> root;
 
@@ -73,7 +73,7 @@ import javax.swing.UIManager;
 
 //	------------------------ end of visual block ----------------------------------
 	@Override
-	public Tree<T> insert(T data) {
+	public TreeRB<T> insert(T data) {
 		RBNode<T> node = new RBNode<>(data);
 		root = insert(root, node);
 		fixInsertionProcess(node);
@@ -230,7 +230,7 @@ import javax.swing.UIManager;
 	private RBNode<T> movedUpNode = null;
 	private Color deletedNodeColor = null;
 @Override
-	public Tree<T> delete(T data) {
+	public TreeRB<T> delete(T data) {
 
 		root = delete(data, root);
 		if (deletedNodeColor == BLACK) {
@@ -409,7 +409,7 @@ public class RedBlackTree {
 	}
 
 	private static void createAndShowGUI() {
-		Tree<Integer> redBlackTree = new VisualRedBlackTree<>();
+		TreeRB<Integer> redBlackTree = new VisualRedBlackTree<>();
 
 		redBlackTree.insert(10).insert(20).insert(40).insert(50).insert(25).insert(60).insert(80).insert(85)
         .insert(90).insert(30).insert(15).insert(75).insert(100).insert(55).insert(45).insert(26) ; 

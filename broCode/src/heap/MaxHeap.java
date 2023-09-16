@@ -35,5 +35,11 @@ public class MaxHeap<T extends Comparable<T>> extends Heap<T> {
 		}
 
 	}
+	public static void main(String[] args) {
+		Heap<Integer> heap = new MaxHeap<Integer>() ; 
+		heap.insert(3).insert(1).insert(6).insert(2) ;
+		heap.print();
 
+		heap.print();
+}
 }

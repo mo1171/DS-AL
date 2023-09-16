@@ -1,6 +1,6 @@
 package trees;
 
-import com.youtube.geekific.Tree;
+
 public class AvlTree<T extends Comparable<T>> implements Tree<T> {
 
 	private AVlNode<T> root;

@@ -26,20 +26,19 @@ public class someLombokThings {
 @AllArgsConstructor
 @RequiredArgsConstructor
 class Cat extends Animal{
-	@NonNull
 	@Accessors(fluent =  true)
 	@ToString.Include
 	@EqualsAndHashCode.Include
-	
-	@Getter(value = AccessLevel.NONE)
-	 private String name ;
+	 private final String name ;
 	private String something ;
 	@lombok.experimental.Tolerate
 	public int getAge(int val) {
 		return age + val ; 
 	}
  private  final int age  ;
-	
+	public static void meow(String something , String anotherthing) {
+		System.out.println("meow" + something + anotherthing);
+	}
 	
 	
 }

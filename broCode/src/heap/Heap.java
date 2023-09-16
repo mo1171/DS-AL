@@ -62,7 +62,7 @@ public abstract class Heap<T extends Comparable<T>> implements IHeap<T> {
 		print();
 	}
 	public void print() {
-		Arrays.stream(heap).forEach(Item -> System.out.print(Item+ " "));
+		Arrays.stream(heap).forEach(Item -> {if(Item!= null) System.out.print(Item+ " ");});
 		System.out.println() ;
 	}
 
